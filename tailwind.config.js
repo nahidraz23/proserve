@@ -1,17 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "15px",
+    },
+    screens: {
+      sm: "576px",
+      md: "960px",
+      lg: "1280px",
+      xl: "1440px",
+    },
+    fontFamily: {
+      primary: "var(--font-dosis)",
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "#3F51B5",
+          hover: "#3F44B5",
+        },
+        secondary: {
+          DEFAULT: "#FF9800",
+          hover: "#FF6E00",
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
