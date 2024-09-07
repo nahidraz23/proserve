@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
       <Button className="hidden lg:flex">Login</Button>
 
-      {/* mobile nav content */}
+      {/* mobile nav contents here */}
       <div className="flex lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
