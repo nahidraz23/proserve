@@ -23,7 +23,7 @@ const Navbar = () => {
   // console.log(pathname);
 
   return (
-    <nav className="flex justify-between container py-5 absolute mx-56 text-white">
+    <nav className="flex justify-between py-5 bg-black text-white fixed w-full opacity-80">
       <h1 className="font-bold text-2xl">
         ProServe<span className="text-primary"></span>
       </h1>

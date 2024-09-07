@@ -12,7 +12,7 @@ import "@smastrom/react-rating/style.css";
 
 const Review = () => {
   return (
-    <div className="max-w-[83.333%] mx-auto my-28  w-full">
+    <div className="container mx-auto my-28 w-full">
       <div className="text-center mb-8">
         <h3 className="text-secondary text-[18px] tracking-[0.17em] font-normal ">
           TESTIMONIALS
@@ -23,7 +23,7 @@ const Review = () => {
         opts={{
           align: "start",
         }}
-        className="w-full "
+        className="w-full"
       >
         <CarouselContent>
           {reviews.map((review, index) => (
