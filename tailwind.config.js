@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["class"], 
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,12 +10,6 @@ module.exports = {
     container: {
       center: true,
       padding: "15px",
-    },
-    screens: {
-      sm: "576px",
-      md: "960px",
-      lg: "1280px",
-      xl: "1440px",
     },
     fontFamily: {
       primary: "var(--font-dosis)",
