@@ -46,13 +46,13 @@ const Review = () => {
                         className="border-[10px] border-white rounded-full overflow-hidden  mx-auto translate-y-7"
                         src={review.user.userImage}
                       />
-                      <div className="bg-white rounded-xl w-[320px] h-[210px] mx-auto text-center px-4 py-7">
+                      <div className="bg-white rounded-xl max-w-[95%] lg:w-[320px]  mx-auto text-center px-4 py-7">
                         <h4 className="text-[18px] ">{review.user.name}</h4>
                         <p className="pb-2 text-[14px] ">{review.user.title}</p>
                         <p className="text-[16px]"> " {review.review} "</p>
                         <div className="py-2 flex justify-center item-center">
                           <Rating
-                            style={{ maxWidth: 150,}}
+                            style={{ maxWidth: 150 }}
                             value={review.rating}
                             className="flex  justify-center items-center "
                           />
@@ -100,7 +100,7 @@ const reviews = [
   {
     image: "https://i.ibb.co.com/YRdb3Gb/Review-3.jpg",
     review:
-      " I was initially hesitant about online platforms, but ProServe exceeded my expectations and made it all possible.",
+      " I was initially hesitant about online platforms, but ProServe exceeded my expectations.",
     rating: 4,
     user: {
       name: "Arif Ur Rahman",
@@ -133,7 +133,7 @@ const reviews = [
   {
     image: "https://i.ibb.co.com/nPDjHmy/Review-6.jpg",
     review:
-      " I was initially hesitant about online platforms, but ProServe exceeded my expectations and made it all possible.",
+      " I was initially hesitant about online platforms, but ProServe exceeded my expectations.",
     rating: 5,
     user: {
       name: "Sarah Lee",
