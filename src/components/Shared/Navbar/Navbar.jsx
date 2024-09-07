@@ -20,12 +20,12 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
 
-  console.log(pathname);
+  // console.log(pathname);
 
   return (
-    <nav className="flex justify-between container py-5">
+    <nav className="flex justify-between container py-5 absolute mx-56 text-white">
       <h1 className="font-bold text-2xl">
-        ProServe<span className="text-primary">.</span>
+        ProServe<span className="text-primary"></span>
       </h1>
       <div className="hidden lg:flex gap-8 items-center">
         {links.map((link) => (
