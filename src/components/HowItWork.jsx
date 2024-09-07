@@ -1,7 +1,7 @@
 const HowItWork = () => {
   return (
     <div className="container w-full mx-auto">
-      <p className="uppercase text-[14px] font-medium">------ How it works</p>
+      <p className="uppercase text-[14px] font-medium">------ How it works [test]  ----</p>
       <h3 className="md:text-[32px] text-[26px] font-semibold">Easiest way to get a service</h3>
 
       <div className="flex md:flex-row flex-col gap-10">
