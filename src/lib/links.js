@@ -5,7 +5,7 @@ export const links = [
   },
   {
     label: "about us",
-    path: "/about us",
+    path: "/about-us",
   },
   {
     label: "contact",
