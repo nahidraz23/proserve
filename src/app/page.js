@@ -1,5 +1,5 @@
 import Review from "@/components/Review";
-import Banner from "@/components/HomePage/Banner/Banner";
+import Banner from "@/components/HomePage/Header/Banner";
 
 export default function Home() {
   return (
