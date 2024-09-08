@@ -8,7 +8,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="">
+    <nav className="text-white">
       <div className="hidden lg:flex gap-8 items-center">
         {links.map((link) => (
           <Link
