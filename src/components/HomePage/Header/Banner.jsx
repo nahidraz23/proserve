@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div>
-      <div className="">
+    <div >
+      <div>
         <Image
           src={banner2}
           alt="Banner image"

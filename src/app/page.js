@@ -7,6 +7,8 @@ export default function Home() {
   return (
     <div className="">
       <Banner></Banner>
+      <WhyChooseUs></WhyChooseUs>
+      <Recommendedservice></Recommendedservice>
       <HowItWork/>
       <HomeStats/>
       <Review/>
