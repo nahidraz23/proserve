@@ -5,6 +5,8 @@ import Navbar from "@/components/Shared/Navbar/Navbar";
 import Link from "next/link";
 
 const Header = () => {
+  // console.log("fixed");
+
   return (
     <header className="py-5 bg-black/80 fixed z-50 w-full flex">
       <div className="flex justify-between container">
@@ -17,7 +19,7 @@ const Header = () => {
           <SignIn />
           <SignUp />
         </div>
-        {/* mobile navbar */}
+        {/* mobile devices navbar */}
         <div className="flex lg:hidden">
           <MobileNav />
         </div>
