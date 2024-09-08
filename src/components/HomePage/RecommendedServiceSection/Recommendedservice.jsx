@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-
 const Recommendedservice = () => {
     return (
         <div className='flex flex-col items-center'>
