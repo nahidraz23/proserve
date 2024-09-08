@@ -23,7 +23,7 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" className="text-2xl">
+        <Button variant="ghost" className="text-2xl text-white">
           <FiAlignRight />
         </Button>
       </SheetTrigger>
