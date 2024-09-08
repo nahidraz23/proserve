@@ -1,10 +1,11 @@
 import Review from "@/components/Review";
-import Banner from "@/components/HomePage/Header/Banner";
 
 export default function Home() {
   return (
     <div className="">
       <Banner></Banner>
+      <HowItWork/>
+      <HomeStats/>
       <Review />
     </div>
   );
