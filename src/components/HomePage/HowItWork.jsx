@@ -1,58 +1,63 @@
+import Image from "next/image";
+import img from '/src/assets/home/howITWork/sheba-howitwork.webp'
 const HowItWork = () => {
   return (
-    <div className="container w-full mx-auto">
-      <p className="uppercase text-[14px] font-medium">------ How it works [test]  ----</p>
-      <h3 className="md:text-[32px] text-[26px] font-semibold">Easiest way to get a service</h3>
+    <div className="container mx-auto px-4 py-10">
+      <p className="uppercase text-sm font-medium text-center md:text-left mb-4">------ How it works</p>
+      <h3 className="text-2xl md:text-4xl font-semibold text-center md:text-left mb-8">
+        Easiest way to get a service
+      </h3>
 
-      <div className="flex md:flex-row flex-col gap-10">
-        {/* left side */}
-        <div className="h-[207px] md:w-1/2 w-full bg-slate-500"></div>
-
-        {/* timeline right side */}
-        <div className="space-y-5 md:w-1/2 w-full">
-          {/* content 1 */}
-          <div className="flex gap-3">
-            <div className="h-16 w-16 bg-green-300 rounded-full flex justify-center items-center">
-              <p>1</p>
-            </div>
-            <div className="space-y-3">
-              <h5>Select the Service</h5>
-              <p>
-                Pick the service you are looking for- from the website or the
-                app.
-              </p>
-            </div>
-          </div>
-
-          {/* content 2 */}
-          <div className="flex gap-3">
-            <div className="h-16 w-16 bg-green-300 rounded-full flex justify-center items-center">
-              <p>1</p>
-            </div>
-            <div className="space-y-3">
-              <h5>Select the Service</h5>
-              <p>
-                Pick the service you are looking for- from the website or the
-                app.
-              </p>
-            </div>
-          </div>
-
-          {/* content 2 */}
-          <div className="flex gap-3">
-            <div className="h-16 w-16 bg-green-300 rounded-full flex justify-center items-center">
-              <p>1</p>
-            </div>
-            <div className="space-y-3">
-              <h5>Select the Service</h5>
-              <p>
-                Pick the service you are looking for- from the website or the
-                app.
-              </p>
-            </div>
-          </div>
+      <div className="flex flex-col md:flex-row md:gap-14 gap-3 items-center md:items-start">
+        {/* left side - Image or placeholder */}
+        <div className="md:h-[360px] h-auto w-full md:w-1/2">
+          <Image className="h-full w-full object-cover" src={img} alt="images"/>
         </div>
 
+        {/* timeline right side */}
+        <div className="lg:space-y-[68px] md:space-y-[48px] space-y-8 w-full md:w-1/2 flex flex-col relative">
+          {/* content 1 */}
+          <div className="flex items-start gap-5">
+            <div className="bg-primary rounded-full">
+              <p className="h-16 w-16 text-xl font-semibold flex items-center justify-center text-white">1</p>
+            </div>
+            <div className="space-y-2">
+              <h5 className="text-lg font-medium">Select the Service</h5>
+              <p className="text-gray-600">
+                Pick the service you are looking for - from the website or the app.
+              </p>
+            </div>
+          </div>
+        
+          {/* content 2 */}
+          <div className="flex items-start gap-5">
+            <div className="bg-primary rounded-full">
+              <p className="h-16 w-16 text-xl font-semibold flex items-center justify-center text-white">1</p>
+            </div>
+            <div className="space-y-2">
+              <h5 className="text-lg font-medium">Select the Service</h5>
+              <p className="text-gray-600">
+                Pick the service you are looking for - from the website or the app.
+              </p>
+            </div>
+          </div>
+
+          {/* content 3 */}
+          <div className="flex items-start gap-5">
+            <div className="bg-primary rounded-full">
+              <p className="h-16 w-16 text-xl font-semibold flex items-center justify-center text-white">1</p>
+            </div>
+            <div className="space-y-2">
+              <h5 className="text-lg font-medium">Select the Service</h5>
+              <p className="text-gray-600">
+                Pick the service you are looking for - from the website or the app.
+              </p>
+            </div>
+          </div>
+
+          {/* hr line */}
+          <p className="h-[2px] bg-slate-800/40 absolute top-28 rotate-90 lg:w-64 md:w-80 w-48 lg:-left-[96px] md:-left-[128px] -left-16 -z-10"></p>
+        </div>
       </div>
     </div>
   );
