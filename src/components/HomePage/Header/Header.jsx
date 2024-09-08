@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="py-5 bg-black fixed z-50 w-full opacity-80 flex">
+    <header className="py-5 bg-black/80 fixed z-50 w-full flex">
       <div className="flex justify-between container">
         <Link href="/" className="font-bold text-2xl text-white">
           ProServe<span className="text-primary">.</span>
