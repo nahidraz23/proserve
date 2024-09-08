@@ -5,15 +5,21 @@ import Recommendedservice from "@/components/HomePage/RecommendedServiceSection/
 import WhyChooseUs from "@/components/HomePage/WhyChooseSection/WhyChooseUs";
 import Review from "@/components/Review";
 
+
 export default function Home() {
   return (
     <div className="">
       <Banner></Banner>
+
+      <Experiences />
+      <Review />
+
       <WhyChooseUs></WhyChooseUs>
       <Recommendedservice></Recommendedservice>
       <HowItWork/>
       <HomeStats/>
       <Review/>
+
     </div>
   );
 }
