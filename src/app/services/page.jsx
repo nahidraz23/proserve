@@ -1,3 +1,4 @@
+"use client"
 import ServicePage from "@/components/servicePage/ServicePage";
 import React from "react";
 

@@ -39,6 +39,30 @@ export default function AboutUs() {
                 })}
             </div>
 
+            {/* about proserve */}
+            <div className="space-y-3">
+                <h4 className="text-3xl font-semibold">About Proserve</h4>
+                <p className="text-base"> 
+                At Proserve, we are committed to providing reliable and efficient utility services to our clients. With a focus on quality, innovation, and customer satisfaction, we deliver essential services that power homes and businesses. Our team of skilled professionals works around the clock to ensure the seamless delivery of electricity, water, and other vital utilities. We take pride in our transparent approach, competitive pricing, and dedication to sustainability. Whether you're a residential or commercial customer, we strive to meet your unique needs with exceptional service and support. Trust Proserve for dependable utility solutions that keep your world running smoothly. 
+                </p>
+            </div>
+
+            {/* missoin */}
+            <div className="space-y-3">
+                <h4 className="text-3xl font-semibold">About Mission</h4>
+                <p className="text-base">
+                Our mission is to provide high-quality, reliable, and sustainable utility services that meet the evolving needs of our customers. We are dedicated to ensuring uninterrupted service through innovation, operational excellence, and a customer-first approach. By leveraging advanced technology and fostering strong relationships with our clients, we aim to create efficient and eco-friendly solutions that enhance everyday life, while maintaining transparency, affordability, and trust.  
+                </p>
+            </div>
+
+            {/* vision */}
+            <div className="space-y-3">
+                <h4 className="text-3xl font-semibold">About Vision</h4>
+                <p className="text-base">
+                To be the leading provider of sustainable and innovative utility services, empowering communities and businesses to thrive in an ever-evolving world. We envision a future where our solutions drive progress, reduce environmental impact, and enhance the quality of life for all. By embracing technology and fostering a culture of continuous improvement, we aim to set new standards in efficiency, reliability, and customer care.  
+                </p>
+            </div>
+
             {/* another info */}
             <div className="flex md:flex-row flex-col items-center md:gap-0 gap-5">
                 <div className="space-y-5 md:w-[50%] w-full">

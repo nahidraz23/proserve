@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -11,13 +10,23 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import { links } from "@/lib/links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { FiAlignRight } from "react-icons/fi";
+import SignInForm from "@/components/Authentication/SignIn/SignInForm";
 
-const MobileNav = () => {
+const MobileNav = ({ handleSignIn, handleSubmit, register, errors }) => {
   const pathname = usePathname();
 
   return (
@@ -27,7 +36,7 @@ const MobileNav = () => {
           <FiAlignRight />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="flex flex-col justify-between">
         <SheetHeader>
           <SheetTitle className="mb-6">
             <Link href="/">
@@ -51,10 +60,52 @@ const MobileNav = () => {
           </SheetDescription>
         </SheetHeader>
 
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button>Login</Button>
-          </SheetClose>
+        <SheetFooter className="flex justify-between gap-4">
+          {/* sign in dialog */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="secondary" className="w-full">
+                Sign In
+              </Button>
+            </DialogTrigger>
+
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Sign in your account</DialogTitle>
+              </DialogHeader>
+              {/* form here */}
+              <div>
+                <SignInForm
+                  handleSignIn={handleSignIn}
+                  handleSubmit={handleSubmit}
+                  register={register}
+                  errors={errors}
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          {/* sign up dialog */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="w-full">Sign Up</Button>
+            </DialogTrigger>
+
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Sign up your account</DialogTitle>
+              </DialogHeader>
+              {/* form here */}
+              <div>
+                <SignInForm
+                  handleSignIn={handleSignIn}
+                  handleSubmit={handleSubmit}
+                  register={register}
+                  errors={errors}
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
         </SheetFooter>
       </SheetContent>
     </Sheet>

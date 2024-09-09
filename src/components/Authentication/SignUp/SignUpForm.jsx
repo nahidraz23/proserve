@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import SocialLogIn from "../SocialLogIn";
 
-const Form = ({ handleSignUp, handleSubmit, errors, register }) => {
+const SignUpForm = ({ handleSignUp, handleSubmit, errors, register }) => {
   return (
     <div className="grid gap-4 py-4">
       {/* login form */}
@@ -76,14 +76,14 @@ const Form = ({ handleSignUp, handleSubmit, errors, register }) => {
             <span className="text-red-500 text-sm">Password is required!</span>
           )}
         </div>
-        {/* social login */}
-        <SocialLogIn />
         <Button className="w-full" variant="secondary">
           Sign up
         </Button>
       </form>
+      {/* social login */}
+      <SocialLogIn />
     </div>
   );
 };
 
-export default Form;
+export default SignUpForm;
