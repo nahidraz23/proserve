@@ -76,12 +76,12 @@ const Form = ({ handleSignUp, handleSubmit, errors, register }) => {
             <span className="text-red-500 text-sm">Password is required!</span>
           )}
         </div>
-        {/* social login */}
-        <SocialLogIn />
         <Button className="w-full" variant="secondary">
           Sign up
         </Button>
       </form>
+      {/* social login */}
+      <SocialLogIn />
     </div>
   );
 };

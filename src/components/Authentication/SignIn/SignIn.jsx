@@ -11,6 +11,9 @@ import {
 
 import { useForm } from "react-hook-form";
 import SignInForm from "./SignInForm";
+import useAuth from "@/components/hooks/useAuth";
+import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 
 const SignIn = () => {
   const {
@@ -18,9 +21,25 @@ const SignIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { toast } = useToast();
+  const { signInUser } = useAuth();
 
-  const handleSignIn = (data) => {
-    console.log(data);
+  const handleSignIn = async (data) => {
+    try {
+      const res = await signInUser(data.email, data.password);
+      toast({
+        title: "Sign in successful!",
+        action: <ToastAction altText="OK">OK</ToastAction>,
+      });
+      console.log(res);
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: error.message,
+        action: <ToastAction altText="OK">OK</ToastAction>,
+      });
+      console.log(error);
+    }
   };
 
   return (
