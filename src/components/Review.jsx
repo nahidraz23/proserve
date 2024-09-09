@@ -10,7 +10,15 @@ import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
-const Review = () => {
+const getReviews = async () => {
+  const res = await fetch("http://localhost:3000/api/review");
+  const reviews = res.json();
+  return reviews;
+};
+
+const Review = async () => {
+  const { reviews } = await getReviews();
+  console.log(reviews);
   return (
     <div className="container mx-auto my-28 w-full">
       <div className="text-center mb-8">
@@ -76,71 +84,71 @@ const Review = () => {
 
 export default Review;
 
-const reviews = [
-  {
-    image: "https://i.ibb.co.com/MM6twT0/Review-2.jpg",
-    review:
-      " Similar service platforms are available abroad, and I've used them before. Thanks, ProServe!",
-    rating: 5,
-    user: {
-      name: "Zabeen Yusuf Nur",
-      title: "Teacher",
-      userImage: "https://i.ibb.co.com/Nxp28yN/customer-3.png",
-    },
-  },
-  {
-    image: "https://i.ibb.co.com/G2HTmXJ/Review-1.jpg",
-    review:
-      " During my wedding, I couldn't schedule with any beauty parlor. The ProServe app met all my needs.",
-    rating: 4,
-    user: {
-      name: "Zeba Fariba",
-      title: "Marketing Manager",
-      userImage: "https://i.ibb.co.com/wBF14s4/customer-4.png",
-    },
-  },
-  {
-    image: "https://i.ibb.co.com/YRdb3Gb/Review-3.jpg",
-    review:
-      " I was initially hesitant about online platforms, but ProServe exceeded my expectations.",
-    rating: 4,
-    user: {
-      name: "Arif Ur Rahman",
-      title: "Consultant",
-      userImage: "https://i.ibb.co.com/mq5srhv/customer-1.png",
-    },
-  },
-  {
-    image: "https://i.ibb.co.com/F3xKWb8/Review-4.jpg",
-    review:
-      " SSimilar service platforms are available abroad, and I've used them before. Thanks, ProServe!",
-    rating: 5,
-    user: {
-      name: "Saima Ahmad",
-      title: "Consultant",
-      userImage: "https://i.ibb.co.com/fFvRK9H/customer-2.png",
-    },
-  },
-  {
-    image: "https://i.ibb.co.com/dQgtrsk/Review-5.jpg",
-    review:
-      " During my wedding, I couldn't schedule with any beauty parlor. The ProServe app met all my needs.",
-    rating: 3,
-    user: {
-      name: "David Wilson",
-      title: "Entrepreneur",
-      userImage: "https://i.ibb.co.com/HryDhHt/customer-6.png",
-    },
-  },
-  {
-    image: "https://i.ibb.co.com/nPDjHmy/Review-6.jpg",
-    review:
-      " I was initially hesitant about online platforms, but ProServe exceeded my expectations.",
-    rating: 5,
-    user: {
-      name: "Sarah Lee",
-      title: "Designer",
-      userImage: "https://i.ibb.co.com/k99W3TP/customer-5.png.png",
-    },
-  },
-];
+// const reviews = [
+//   {
+//     image: "https://i.ibb.co.com/MM6twT0/Review-2.jpg",
+//     review:
+//       " Similar service platforms are available abroad, and I've used them before. Thanks, ProServe!",
+//     rating: 5,
+//     user: {
+//       name: "Zabeen Yusuf Nur",
+//       title: "Teacher",
+//       userImage: "https://i.ibb.co.com/Nxp28yN/customer-3.png",
+//     },
+//   },
+//   {
+//     image: "https://i.ibb.co.com/G2HTmXJ/Review-1.jpg",
+//     review:
+//       " During my wedding, I couldn't schedule with any beauty parlor. The ProServe app met all my needs.",
+//     rating: 4,
+//     user: {
+//       name: "Zeba Fariba",
+//       title: "Marketing Manager",
+//       userImage: "https://i.ibb.co.com/wBF14s4/customer-4.png",
+//     },
+//   },
+//   {
+//     image: "https://i.ibb.co.com/YRdb3Gb/Review-3.jpg",
+//     review:
+//       " I was initially hesitant about online platforms, but ProServe exceeded my expectations.",
+//     rating: 4,
+//     user: {
+//       name: "Arif Ur Rahman",
+//       title: "Consultant",
+//       userImage: "https://i.ibb.co.com/mq5srhv/customer-1.png",
+//     },
+//   },
+//   {
+//     image: "https://i.ibb.co.com/F3xKWb8/Review-4.jpg",
+//     review:
+//       " SSimilar service platforms are available abroad, and I've used them before. Thanks, ProServe!",
+//     rating: 5,
+//     user: {
+//       name: "Saima Ahmad",
+//       title: "Consultant",
+//       userImage: "https://i.ibb.co.com/fFvRK9H/customer-2.png",
+//     },
+//   },
+//   {
+//     image: "https://i.ibb.co.com/dQgtrsk/Review-5.jpg",
+//     review:
+//       " During my wedding, I couldn't schedule with any beauty parlor. The ProServe app met all my needs.",
+//     rating: 3,
+//     user: {
+//       name: "David Wilson",
+//       title: "Entrepreneur",
+//       userImage: "https://i.ibb.co.com/HryDhHt/customer-6.png",
+//     },
+//   },
+//   {
+//     image: "https://i.ibb.co.com/nPDjHmy/Review-6.jpg",
+//     review:
+//       " I was initially hesitant about online platforms, but ProServe exceeded my expectations.",
+//     rating: 5,
+//     user: {
+//       name: "Sarah Lee",
+//       title: "Designer",
+//       userImage: "https://i.ibb.co.com/k99W3TP/customer-5.png.png",
+//     },
+//   },
+// ];
