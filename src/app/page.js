@@ -1,7 +1,8 @@
+import Experiences from "@/components/HomePage/experiences/Experiences";
 import Banner from "@/components/HomePage/Header/Banner";
 import HomeStats from "@/components/HomePage/HomeStats";
 import HowItWork from "@/components/HomePage/HowItWork";
-import Recommendedservice from "@/components/HomePage/RecommendedServiceSection/Recommendedservice";
+import RecommendedService from "@/components/HomePage/RecommendedServiceSection/RecommendedService";
 import WhyChooseUs from "@/components/HomePage/WhyChooseSection/WhyChooseUs";
 import Review from "@/components/Review";
 
@@ -15,7 +16,7 @@ export default function Home() {
       <Review />
 
       <WhyChooseUs></WhyChooseUs>
-      <Recommendedservice></Recommendedservice>
+      <RecommendedService></RecommendedService>
       <HowItWork/>
       <HomeStats/>
       <Review/>
