@@ -9,15 +9,18 @@ const Recommendedservice = () => {
             </div>
             <div className='mt-8'>
                 <Tabs defaultValue="account" className="w-full">
-                    <TabsList className="bg-gray-300">
+                    <TabsList className="bg-[#EEE]">
                         <TabsTrigger value="ac-servicing">AC Servicing</TabsTrigger>
                         <TabsTrigger value="home-cleaning">Home Cleaning</TabsTrigger>
-                        <TabsTrigger value="password">Password</TabsTrigger>
-                        <TabsTrigger value="password">Password</TabsTrigger>
-                        <TabsTrigger value="password">Password</TabsTrigger>
+                        <TabsTrigger value="ambulance">Ambulance</TabsTrigger>
+                        <TabsTrigger value="caregiver">Caregiver</TabsTrigger>
+                        <TabsTrigger value="pest-Control">Pest Control</TabsTrigger>
                     </TabsList>
                     <TabsContent value="ac-servicing">Make changes to your account here.</TabsContent>
-                    <TabsContent value="home-cleaning">Change your password here.</TabsContent>
+                    <TabsContent value="home-cleaning">Home Cleaning.</TabsContent>
+                    <TabsContent value="ambulance">Ambulance service.</TabsContent>
+                    <TabsContent value="caregiver">Caregiver service.</TabsContent>
+                    <TabsContent value="pest-Control">Pest contorl service.</TabsContent>
                 </Tabs>
             </div>
         </div>
