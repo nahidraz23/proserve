@@ -17,12 +17,10 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/review`)
+    fetch(`https://proserve-three.vercel.app/api/review`)
       .then(res => res.json())
       .then(data => setReviews(data))
   }, [])
-
-  console.log(typeof reviews)
 
   return (
     <div className="container mx-auto my-28 w-full">
