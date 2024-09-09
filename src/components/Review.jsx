@@ -9,16 +9,17 @@ import {
 import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useEffect, useState } from "react";
 
-const getReviews = async () => {
-  const res = await fetch(`http://localhost:3000/api/review`);
-  const reviews = await res.json();
-  return reviews;
-};
+const Review = () => {
+  const [reviews, setReviews] = useState([]);
 
-const Review = async () => {
-  const { reviews } = await getReviews();
-  // console.log(reviews);
+  useEffect(() => {
+    fetch(`https://proserve-three.vercel.app/api/review`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+
   return (
     <div className="container mx-auto my-28 w-full">
       <div className="text-center mb-8">
