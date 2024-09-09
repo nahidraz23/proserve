@@ -8,15 +8,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useForm } from "react-hook-form";
 import SignUpForm from "./SignUpForm";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "@/providers/AuthProvider";
 
 const SignUp = () => {
   const [role, setRole] = useState("user");
+
+  const { createUser } = useContext(AuthContext);
 
   const {
     register,
@@ -30,14 +32,21 @@ const SignUp = () => {
     setRole(role);
   };
 
-  const handleSignUp = (data) => {
+  const handleSignUp = async (data) => {
     const userInfo = {
       name: data?.name,
       email: data?.name,
       role: role,
     };
 
-    console.log(userInfo);
+    try {
+      const res = await createUser(data.email, data.password);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      alert("Sign up successful!");
+    }
   };
 
   return (
