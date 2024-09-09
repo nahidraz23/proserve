@@ -18,11 +18,6 @@ export default function Home() {
       <HowItWork/>
       <HomeStats/>
       <Review/>
-
-      <Recommendedservice></Recommendedservice>
-      <HowItWork />
-      <HomeStats />
-      <Review />
     </div>
   );
 }

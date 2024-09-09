@@ -36,7 +36,7 @@ const Review = async () => {
         className="w-full"
       >
         <CarouselContent>
-          {reviews.map((review, index) => (
+          {reviews?.map((review, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 z-0">
               <div className="p-7">
                 <Card className="relative rounded-xl overflow-hidden h-[500px] shadow-lg border-none">
