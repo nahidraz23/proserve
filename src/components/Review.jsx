@@ -11,7 +11,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const getReviews = async () => {
-  const res = await fetch("http://localhost:3000/api/review");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/review`);
   const reviews = res.json();
   return reviews;
 };
