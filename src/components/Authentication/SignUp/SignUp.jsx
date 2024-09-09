@@ -12,13 +12,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useForm } from "react-hook-form";
 import SignUpForm from "./SignUpForm";
-import { useContext, useState } from "react";
-import { AuthContext } from "@/providers/AuthProvider";
+import { useState } from "react";
+import useAuth from "@/components/hooks/useAuth";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 
 const SignUp = () => {
-  const [role, setRole] = useState("user");
+  const [userRole, setUserRole] = useState("user");
+  const { toast } = useToast();
 
-  const { createUser } = useContext(AuthContext);
+  const { user, createUser, updateUserProfile } = useAuth();
 
   const {
     register,
@@ -27,25 +30,27 @@ const SignUp = () => {
     reset,
   } = useForm();
 
-  const handleSetRole = (role) => {
+  const handleSetRole = (e) => {
     reset();
-    setRole(role);
+    setUserRole(e);
   };
 
   const handleSignUp = async (data) => {
-    const userInfo = {
-      name: data?.name,
-      email: data?.name,
-      role: role,
-    };
-
     try {
       const res = await createUser(data.email, data.password);
+      toast({
+        title: "Sign up successful!",
+        action: <ToastAction altText="OK">OK</ToastAction>,
+      });
       console.log(res);
+      await updateUserProfile(user?.displayName, user?.photoURL);
     } catch (error) {
+      toast({
+        variant: "destructive",
+        title: error.message,
+        action: <ToastAction altText="OK">OK</ToastAction>,
+      });
       console.log(error);
-    } finally {
-      alert("Sign up successful!");
     }
   };
 
