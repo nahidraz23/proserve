@@ -8,7 +8,7 @@ const Banner = () => {
         <Image
           src={banner2}
           alt="Banner image"
-          className="md:h-[1000px] w-full"
+          className="md:h-[800px] w-full"
         />
       </div>
     </div>

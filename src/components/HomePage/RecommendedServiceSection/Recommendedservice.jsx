@@ -1,7 +1,12 @@
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+
+
+const RecommendedService = () => {
+
 const Recommendedservice = () => {
+
     return (
         <div className='flex flex-col items-center'>
             <div className='mt-8 md:mt-32'>
@@ -27,4 +32,4 @@ const Recommendedservice = () => {
     );
 };
 
-export default Recommendedservice;
+export default RecommendedService;
