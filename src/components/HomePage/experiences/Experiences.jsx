@@ -6,7 +6,7 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const Experiences = () => {
   return (
-    <section className="container mx-auto my-28 w-full">
+    <section className="container mx-auto mt-28 mb-48 w-full">
       <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-0">
         <div className="lg:w-1/2">
           <div className="w-[300px] h-[300px] bg-[#F7F7F7] rounded-r-3xl overflow-hidden z-0 -mb-64"></div>
