@@ -1,3 +1,4 @@
+"use client"
 import banner2 from "../../../assets/images/banner2.jpg";
 import Image from "next/image";
 
