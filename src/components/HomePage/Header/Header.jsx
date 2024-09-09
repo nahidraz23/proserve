@@ -1,12 +1,10 @@
-import SignIn from "@/components/Modal/SignIn";
-import SignUp from "@/components/Modal/SignUp";
+import SignIn from "@/components/Authentication/SignIn/SignIn";
+import SignUp from "@/components/Authentication/SignUp/SignUp";
 import MobileNav from "@/components/Shared/Navbar/MobileNav";
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import Link from "next/link";
 
 const Header = () => {
-  // console.log("fixed");
-
   return (
     <header className="py-5 bg-black/80 fixed z-50 w-full flex">
       <div className="flex justify-between container">
