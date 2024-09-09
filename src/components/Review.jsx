@@ -18,7 +18,7 @@ const getReviews = async () => {
 
 const Review = async () => {
   const { reviews } = await getReviews();
-  console.log(reviews);
+  // console.log(reviews);
   return (
     <div className="container mx-auto my-28 w-full">
       <div className="text-center mb-8">
