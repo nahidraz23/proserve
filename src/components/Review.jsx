@@ -11,7 +11,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const getReviews = async () => {
-  const res = await fetch(`http://localhost:3000/api/review`);
+  const res = await fetch(`https://proserve-three.vercel.app//api/review`);
   const reviews = await res.json();
   return reviews;
 };
