@@ -52,9 +52,7 @@ const MobileNav = () => {
         </SheetHeader>
 
         <SheetFooter>
-          <SheetClose asChild>
-            <Button>Login</Button>
-          </SheetClose>
+          <Button>Login</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>
