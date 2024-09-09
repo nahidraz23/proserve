@@ -50,7 +50,6 @@ const MobileNav = () => {
             </div>
           </SheetDescription>
         </SheetHeader>
-
         <SheetFooter>
           <Button>Login</Button>
         </SheetFooter>
