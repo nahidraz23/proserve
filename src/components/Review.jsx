@@ -11,16 +11,14 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 
-
 const Review = () => {
-
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     fetch(`https://proserve-three.vercel.app/api/review`)
-      .then(res => res.json())
-      .then(data => setReviews(data))
-  }, [])
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
 
   return (
     <div className="container mx-auto my-28 w-full">
@@ -73,12 +71,12 @@ const Review = () => {
                           </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))
-          }
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
