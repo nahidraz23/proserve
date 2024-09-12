@@ -1,4 +1,9 @@
-"use client";
+
+"use client"
+import { GrServices } from "react-icons/gr";
+import { LiaUsersCogSolid } from "react-icons/lia";
+import { CgProfile } from "react-icons/cg";
+
 
 import {
   Chart as ChartJS,
@@ -62,6 +67,9 @@ const Dashboard = () => {
   };
 
   return (
+
+    <div>
+
     <div className="flex flex-col md:flex-row  bg-gray-100 pt-20">
       {/* Sidebar */}
       <aside className="w-full md:w-1/6 bg-white p-5 flex md:flex-col flex-row gap-4">
@@ -77,8 +85,9 @@ const Dashboard = () => {
         {/* Sidebar items */}
       </aside>
 
+
       {/* Main content */}
-      <main className="flex-1 md:p-6">
+      <main className="md:p-6">
         {/* Header */}
         <header className="flex flex-col md:flex-row justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold mb-4 md:mb-0">Dashboard</h2>

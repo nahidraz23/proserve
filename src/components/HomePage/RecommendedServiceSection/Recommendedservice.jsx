@@ -9,7 +9,7 @@ import ambulance from '../../../assets/images/recommended/ambulance.jpg'
 import caregiver from '../../../assets/images/recommended/caregiver.png'
 import pestcontrol from '../../../assets/images/recommended/pestcontrol.jpg'
 
-const Recommendedservice = () => {
+
 
     return (
         <div className='flex flex-col items-center'>
@@ -81,3 +81,4 @@ const Recommendedservice = () => {
     );
 };
 export default Recommendedservice;
+
