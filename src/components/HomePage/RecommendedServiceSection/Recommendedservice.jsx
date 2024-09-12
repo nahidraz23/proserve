@@ -1,5 +1,4 @@
 'use client'
-import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
@@ -9,8 +8,7 @@ import ambulance from '../../../assets/images/recommended/ambulance.jpg'
 import caregiver from '../../../assets/images/recommended/caregiver.png'
 import pestcontrol from '../../../assets/images/recommended/pestcontrol.jpg'
 
-
-
+const Recommendedservice = () => {
     return (
         <div className='flex flex-col items-center'>
             <div className='mt-8 md:mt-32'>
@@ -26,14 +24,14 @@ import pestcontrol from '../../../assets/images/recommended/pestcontrol.jpg'
                         <TabsTrigger value="pest-Control">Pest Control</TabsTrigger>
                     </TabsList>
                     <TabsContent value="ac-servicing" >
-                            <Card>
-                                <Image
-                                    src={ac}
-                                    width={614}
-                                    height={300}
-                                    className='rounded-xl'
-                                ></Image>
-                            </Card>
+                        <Card>
+                            <Image
+                                src={ac}
+                                width={614}
+                                height={300}
+                                className='rounded-xl'
+                            ></Image>
+                        </Card>
                     </TabsContent>
                     <TabsContent value="home-cleaning">
                         <Card>
