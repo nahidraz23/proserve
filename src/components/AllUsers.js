@@ -1,3 +1,4 @@
+import Category from "@/app/checkout/[category]/page";
 import {
   Table,
   TableBody,
@@ -8,9 +9,11 @@ import {
 } from "@/components/ui/table";
 import { MdDeleteForever } from "react-icons/md";
 
-const AllUsers = () => {
+const AllUsers = ({users}) => {
+  console.log("map uuu",users);
+
   return (
-    <div className="w-[90%] lg:w-[80%] mx-auto my-10">
+    <div className="w-[90%] lg:w-[80%] mx-auto">
       <h1 className="text-2xl font-bold text-gray-800 text-center mb-20">
         User Management
       </h1>
@@ -26,7 +29,7 @@ const AllUsers = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {users.map((user, index) => (
+          {users?.map((user, index) => (
             <TableRow
               key={index}
               className={`transition duration-200 ease-in-out hover:bg-gray-100 ${
@@ -54,75 +57,76 @@ const AllUsers = () => {
 
 export default AllUsers;
 
-const users = [
-  {
-    id: 1,
-    name: "John Doe",
-    email: "john.doe@example.com",
-    role: "User",
-    completed_service: 5,
-  },
-  {
-    id: 2,
-    name: "Alice Smith",
-    email: "alice.smith@example.com",
-    role: "Admin",
-    completed_service: 12,
-  },
-  {
-    id: 3,
-    name: "Bob Johnson",
-    email: "bob.johnson@example.com",
-    role: "Agent",
-    completed_service: 8,
-  },
-  {
-    id: 4,
-    name: "Emily Davis",
-    email: "emily.davis@example.com",
-    role: "User",
-    completed_service: 3,
-  },
-  {
-    id: 5,
-    name: "Michael Brown",
-    email: "michael.brown@example.com",
-    role: "Admin",
-    completed_service: 15,
-  },
-  {
-    id: 6,
-    name: "Linda Taylor",
-    email: "linda.taylor@example.com",
-    role: "Agent",
-    completed_service: 9,
-  },
-  {
-    id: 7,
-    name: "David Wilson",
-    email: "david.wilson@example.com",
-    role: "User",
-    completed_service: 0,
-  },
-  {
-    id: 8,
-    name: "Sarah Martinez",
-    email: "sarah.martinez@example.com",
-    role: "Agent",
-    completed_service: 7,
-  },
-  {
-    id: 9,
-    name: "Robert Clark",
-    email: "robert.clark@example.com",
-    role: "User",
-    completed_service: 2,
-  },
-  {
-    id: 10,
-    name: "Karen Lewis",
-    email: "karen.lewis@example.com",
-    role: "Admin",
-    completed_service: 11,
-  },
-];
+// const users = [
+//   {
+//     id: 1,
+//     name: "John Doe",
+//     email: "john.doe@example.com",
+//     role: "User",
+//     completed_service: 5,
+//   },
+//   {
+//     id: 2,
+//     name: "Alice Smith",
+//     email: "alice.smith@example.com",
+//     role: "Admin",
+//     completed_service: 12,
+//   },
+//   {
+//     id: 3,
+//     name: "Bob Johnson",
+//     email: "bob.johnson@example.com",
+//     role: "Agent",
+//     category: "Home Services",
+//     completed_service: 8,
+//   },
+//   {
+//     id: 4,
+//     name: "Emily Davis",
+//     email: "emily.davis@example.com",
+//     role: "User",
+//     completed_service: 3,
+//   },
+//   {
+//     id: 5,
+//     name: "Michael Brown",
+//     email: "michael.brown@example.com",
+//     role: "Admin",
+//     completed_service: 15,
+//   },
+//   {
+//     id: 6,
+//     name: "Linda Taylor",
+//     email: "linda.taylor@example.com",
+//     role: "Agent",
+//     completed_service: 9,
+//   },
+//   {
+//     id: 7,
+//     name: "David Wilson",
+//     email: "david.wilson@example.com",
+//     role: "User",
+//     completed_service: 0,
+//   },
+//   {
+//     id: 8,
+//     name: "Sarah Martinez",
+//     email: "sarah.martinez@example.com",
+//     role: "Agent",
+//     completed_service: 7,
+//   },
+//   {
+//     id: 9,
+//     name: "Robert Clark",
+//     email: "robert.clark@example.com",
+//     role: "User",
+//     completed_service: 2,
+//   },
+//   {
+//     id: 10,
+//     name: "Karen Lewis",
+//     email: "karen.lewis@example.com",
+//     role: "Admin",
+//     completed_service: 11,
+//   },
+// ];

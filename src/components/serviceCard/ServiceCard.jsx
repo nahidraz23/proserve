@@ -5,11 +5,11 @@ import { RiTimelineView } from "react-icons/ri";
 import { IoMdStar } from "react-icons/io";
 
 const ServiceCard = ({ service }) => {
-  const { name, description, status, time, price, review } = service;
+  const {_id, name, description, status, time, price, review } = service;
   return (
     <div>
       <Link
-        href="#"
+        href={`/services/${_id}`}
         className="block rounded-lg p-4 shadow-sm shadow-indigo-100"
       >
         <img
