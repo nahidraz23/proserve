@@ -3,7 +3,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import SocialLogIn from "../SocialLogIn";
 
-const SignUpForm = ({ handleSignUp, handleSubmit, errors, register }) => {
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const SignUpForm = ({ handleSubmit, handleSignUp, errors, register }) => {
   return (
     <div className="grid gap-4 py-4">
       {/* login form */}
@@ -75,6 +85,22 @@ const SignUpForm = ({ handleSignUp, handleSubmit, errors, register }) => {
           {errors.password?.type === "required" && (
             <span className="text-red-500 text-sm">Password is required!</span>
           )}
+        </div>
+
+        {/* role */}
+        <div className="space-y-2 text-start">
+          <Label htmlFor="role">Role</Label>
+          <Select {...register("role")}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Select a role" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectItem value="user">User</SelectItem>
+                <SelectItem value="agent">Agent</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
         <Button className="w-full" variant="secondary">
           Sign up
