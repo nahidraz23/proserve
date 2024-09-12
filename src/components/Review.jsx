@@ -71,17 +71,17 @@ const Review = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))
+          }
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </div>
+    </div >
   );
 };
 
