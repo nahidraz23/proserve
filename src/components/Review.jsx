@@ -15,7 +15,6 @@ import "@smastrom/react-rating/style.css";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(reviews);
 
   useEffect(() => {
 

@@ -30,10 +30,14 @@ const Header = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    watch
   } = useForm();
 
   const handleSignUp = async (data) => {
     console.log(data);
+
+    // const email = data.email;
+    // const name = data.name;
 
     try {
       const res = await createUser(data.email, data.password);
@@ -140,6 +144,7 @@ const Header = () => {
                     register={register}
                     errors={errors}
                     reset={reset}
+                    watch={watch}
                   />
                 </DialogContent>
               </Dialog>

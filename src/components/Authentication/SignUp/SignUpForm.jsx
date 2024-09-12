@@ -12,8 +12,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 
-const SignUpForm = ({ handleSubmit, handleSignUp, errors, register }) => {
+const SignUpForm = ({ handleSubmit, handleSignUp, errors, register, watch }) => {
+
+  // const [role, setRole] = useState(null);
+  const selectedRole = watch("role");
+
   return (
     <div className="grid gap-4 py-4">
       {/* login form */}
@@ -78,7 +83,7 @@ const SignUpForm = ({ handleSubmit, handleSignUp, errors, register }) => {
             Password<span className="text-secondary"> *</span>
           </Label>
           <Input
-            type="text"
+            type="password"
             placeholder="Enter your password"
             {...register("password", { required: true })}
           />
