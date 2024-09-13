@@ -19,10 +19,11 @@ import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import SignInForm from "@/components/Authentication/SignIn/SignInForm";
 import SignUpForm from "@/components/Authentication/SignUp/SignUpForm";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
 
 const Header = () => {
   const { toast } = useToast();
-
+  const axiosPublic = useAxiosPublic();
   const { user, createUser, signInUser, updateUserProfile, logOut } = useAuth();
 
   const {
@@ -30,22 +31,21 @@ const Header = () => {
     handleSubmit,
     formState: { errors },
     reset,
-    watch
+    control
   } = useForm();
 
   const handleSignUp = async (data) => {
-    console.log(data);
-
-    // const email = data.email;
-    // const name = data.name;
-
     try {
       const res = await createUser(data.email, data.password);
-      toast({
-        title: "Sign up successful!",
-        action: <ToastAction altText="OK">OK</ToastAction>,
-      });
-      console.log(res);
+      const result = await axiosPublic.post('/api/users', data)
+      if (result.data.insertedId) {
+        toast({
+          title: "Sign up successful!",
+          action: <ToastAction altText="OK">OK</ToastAction>,
+        });
+      }
+
+      // console.log(result);
       await updateUserProfile(user?.displayName, user?.photoURL);
     } catch (error) {
       toast({
@@ -144,7 +144,7 @@ const Header = () => {
                     register={register}
                     errors={errors}
                     reset={reset}
-                    watch={watch}
+                    control={control}
                   />
                 </DialogContent>
               </Dialog>

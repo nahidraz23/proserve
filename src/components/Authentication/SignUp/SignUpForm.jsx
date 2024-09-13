@@ -12,12 +12,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import { Controller } from "react-hook-form";
 
-const SignUpForm = ({ handleSubmit, handleSignUp, errors, register, watch }) => {
-
-  // const [role, setRole] = useState(null);
-  const selectedRole = watch("role");
+const SignUpForm = ({ handleSubmit, handleSignUp, errors, register, control }) => {
 
   return (
     <div className="grid gap-4 py-4">
@@ -55,7 +52,7 @@ const SignUpForm = ({ handleSubmit, handleSignUp, errors, register, watch }) => 
         {/* email field______________________________________*/}
         <div className="space-y-2 text-start">
           <Label htmlFor="email">
-            Email<span className="text-secondary"> *</span>
+            Email<span className="text-secondary">*</span>
           </Label>
           <Input
             type="text"
@@ -93,20 +90,27 @@ const SignUpForm = ({ handleSubmit, handleSignUp, errors, register, watch }) => 
         </div>
 
         {/* role */}
-        <div className="space-y-2 text-start">
-          <Label htmlFor="role">Role</Label>
-          <Select {...register("role")}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a role" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectItem value="user">User</SelectItem>
-                <SelectItem value="agent">Agent</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
+        <Controller
+          name="role"
+          control={control}
+          defaultValue={""}
+          render={({ field }) => (
+            <div className="space-y-2 text-start">
+              <Label htmlFor="role">Role</Label>
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a role" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup >
+                    <SelectItem value="user">User</SelectItem>
+                    <SelectItem value="agent">Agent</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+          )}
+        ></Controller>
         <Button className="w-full" variant="secondary">
           Sign up
         </Button>
