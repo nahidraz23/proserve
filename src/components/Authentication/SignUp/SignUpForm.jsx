@@ -103,8 +103,40 @@ const SignUpForm = ({ handleSubmit, handleSignUp, errors, register, control }) =
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup >
-                    <SelectItem value="user">User</SelectItem>
-                    <SelectItem value="agent">Agent</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="user">User</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="agent">Agent</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+          )}
+        ></Controller>
+
+        {/* category */}
+        <Controller
+          name="category"
+          control={control}
+          defaultValue={""}
+          render={({ field }) => (
+            <div className="space-y-2 text-start">
+              <Label htmlFor="role">Category</Label>
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a category" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup >
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="car-wash">Car wash</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="babysitter">Babysitter</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="painting-service">Painting Service</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="home-cleaning">Home Cleaning</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="pest-control">Pest Control</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="ac-servicing">AC Servicing</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="ambulance-service">Ambulance Service</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="nursing">Nursing</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="tv-service">TV Service</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="laptop-service">Laptop Service</SelectItem>
+                    <SelectItem className="hover:bg-secondary-hover hover:rounded-xl hover:text-white hover:font-semibold" value="salon-care">Salon Care</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

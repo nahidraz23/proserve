@@ -35,16 +35,25 @@ const Header = () => {
   } = useForm();
 
   const handleSignUp = async (data) => {
+    const name = data.name;
+    const email = data.email;
+    const role = data.role;
+    let completed_service = 0;
+    let isActive = "active";
+    let category = data.category;
+
+
+    const user = {name, email, role, completed_service, isActive, category}
+    console.log(user)
     try {
       const res = await createUser(data.email, data.password);
-      const result = await axiosPublic.post('/api/users', data)
+      const result = await axiosPublic.post('/api/users', user)
       if (result.data.insertedId) {
         toast({
           title: "Sign up successful!",
           action: <ToastAction altText="OK">OK</ToastAction>,
         });
       }
-
       // console.log(result);
       await updateUserProfile(user?.displayName, user?.photoURL);
     } catch (error) {

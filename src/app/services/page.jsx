@@ -23,7 +23,7 @@ const page = () => {
     fetchServices();
   }, []);
 
-  console.log(services);
+  // console.log(services);
 
   if(loading){return <div className="h-screen flex justify-center items-center">
     <Loading></Loading>
