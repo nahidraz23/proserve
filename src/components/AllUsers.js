@@ -5,10 +5,9 @@ const AllUsers = ({users}) => {
 
   return (
     <div className="mx-auto px-4 w-[100%] ">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        {/* is here change */}
-        All Users , is here
-      </h1>
+      {/* <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+        All Users is here
+      </h1> */}
 
       {/* Responsive table container */}
       <div className="overflow-x-auto">
@@ -33,7 +32,7 @@ const AllUsers = ({users}) => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {users.length > 0 && users.map((user) => (
+            {users?.length > 0 && users?.map((user) => (
               <tr
                 key={user.id}
                 className="hover:bg-gray-100 transition-colors duration-150"
@@ -66,77 +65,3 @@ const AllUsers = ({users}) => {
 };
 
 export default AllUsers;
-
-// const users = [
-//   {
-//     id: 1,
-//     name: "John Doe",
-//     email: "john.doe@example.com",
-//     role: "User",
-//     completed_service: 5,
-//   },
-//   {
-//     id: 2,
-//     name: "Alice Smith",
-//     email: "alice.smith@example.com",
-//     role: "Admin",
-//     completed_service: 12,
-//   },
-//   {
-//     id: 3,
-//     name: "Bob Johnson",
-//     email: "bob.johnson@example.com",
-//     role: "Agent",
-//     category: "Home Services",
-//     completed_service: 8,
-//   },
-//   {
-//     id: 4,
-//     name: "Emily Davis",
-//     email: "emily.davis@example.com",
-//     role: "User",
-//     completed_service: 3,
-//   },
-//   {
-//     id: 5,
-//     name: "Michael Brown",
-//     email: "michael.brown@example.com",
-//     role: "Admin",
-//     completed_service: 15,
-//   },
-//   {
-//     id: 6,
-//     name: "Linda Taylor",
-//     email: "linda.taylor@example.com",
-//     role: "Agent",
-//     completed_service: 9,
-//   },
-//   {
-//     id: 7,
-//     name: "David Wilson",
-//     email: "david.wilson@example.com",
-//     role: "User",
-//     completed_service: 0,
-//   },
-//   {
-//     id: 8,
-//     name: "Sarah Martinez",
-//     email: "sarah.martinez@example.com",
-//     role: "Agent",
-//     completed_service: 7,
-//   },
-//   {
-//     id: 9,
-//     name: "Robert Clark",
-//     email: "robert.clark@example.com",
-//     role: "User",
-//     completed_service: 2,
-//   },
-//   {
-//     id: 10,
-//     name: "Karen Lewis",
-//     email: "karen.lewis@example.com",
-//     role: "Admin",
-//     completed_service: 11,
-//   },
-// ];

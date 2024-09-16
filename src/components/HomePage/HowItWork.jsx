@@ -42,7 +42,7 @@ const HowItWork = () => {
           <div className="flex items-start gap-5">
             <div className="bg-primary rounded-full">
               <p className="h-16 w-16 text-xl font-semibold flex items-center justify-center text-white">
-                1
+                2
               </p>
             </div>
             <div className="space-y-2">
@@ -58,7 +58,7 @@ const HowItWork = () => {
           <div className="flex items-start gap-5">
             <div className="bg-primary rounded-full">
               <p className="h-16 w-16 text-xl font-semibold flex items-center justify-center text-white">
-                1
+                3
               </p>
             </div>
             <div className="space-y-2">
