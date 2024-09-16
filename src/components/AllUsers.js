@@ -1,56 +1,66 @@
-import Category from "@/app/checkout/[category]/page";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { MdDeleteForever } from "react-icons/md";
+import { FaTrash } from "react-icons/fa6";
 
 const AllUsers = ({users}) => {
-  console.log("map uuu",users);
+  console.log("adgfuyfwyf",users);
 
   return (
-    <div className="w-[90%] lg:w-[80%] mx-auto">
-      <h1 className="text-2xl font-bold text-gray-800 text-center mb-20">
-        User Management
+    <div className="mx-auto px-4 w-[100%] ">
+      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+        {/* is here change */}
+        All Users , is here
       </h1>
-      <Table className="bg-white shadow-lg rounded-lg overflow-hidden">
-        <TableHeader>
-          <TableRow className="bg-gray-800">
-            <TableHead className="text-white px-4 py-2">ID</TableHead>
-            <TableHead className="text-white px-4 py-2">Name</TableHead>
-            <TableHead className="text-white px-4 py-2">Email</TableHead>
-            <TableHead className="text-white px-4 py-2">Role</TableHead>
-            <TableHead className="text-white px-4 py-2 text-center">Completed Services</TableHead>
-            <TableHead className="text-white px-4 py-2">Action</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {users?.map((user, index) => (
-            <TableRow
-              key={index}
-              className={`transition duration-200 ease-in-out hover:bg-gray-100 ${
-                index % 2 === 0 ? "bg-gray-50" : "bg-white"
-              }`}
-            >
-              <TableCell className="px-4 py-3 font-medium text-gray-700">{user.id}</TableCell>
-              <TableCell className="px-4 py-3">{user.name}</TableCell>
-              <TableCell className="px-4 py-3">{user.email}</TableCell>
-              <TableCell className="px-4 py-3">{user.role}</TableCell>
-              <TableCell className="px-6 pr-10  text-center">{user.completed_service}</TableCell>
-              <TableCell className="px-4 py-3 text-center">
-                <MdDeleteForever
-                  className="text-red-600 cursor-pointer hover:text-red-500 transition duration-200"
-                  size={26}
-                />
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+
+      {/* Responsive table container */}
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white shadow-lg rounded-lg">
+          <thead>
+            <tr className="bg-indigo-600 text-white">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Name
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Email
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Role
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Completed Services
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {users.length > 0 && users.map((user) => (
+              <tr
+                key={user.id}
+                className="hover:bg-gray-100 transition-colors duration-150"
+              >
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {user.name}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {user.email}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {user.role}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                  {user.completed_service}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm">
+                  <button className="text-red-600 hover:text-red-900 flex items-center space-x-1">
+                    <FaTrash />
+                    <span>Delete</span>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

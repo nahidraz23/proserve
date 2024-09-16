@@ -95,8 +95,8 @@ const Header = () => {
   };
 
   return (
-    <header className="py-5 bg-black/80 fixed z-50 w-full flex">
-      <div className="flex justify-between container">
+    <header className="py-5 bg-gradient-to-r from-indigo-900 to-purple-900 fixed z-50 w-full flex">
+      <div className="flex justify-between items-center container">
         <Link href="/" className="font-bold text-2xl text-white">
           ProServe<span className="text-primary">.</span>
         </Link>
@@ -114,10 +114,64 @@ const Header = () => {
             </>
           ) : (
             <>
+
+              {/* sign up dialog */}
+              <Dialog>
+                <DialogTrigger asChild className="hidden lg:flex">
+                  <Button className="text-white">Sign Up</Button>
+                </DialogTrigger>
+                <DialogContent className="">
+                  <DialogHeader>
+                    <DialogTitle>Sign up your account</DialogTitle>
+                  </DialogHeader>
+
+                  {/* tabs */}
+                  <Tabs defaultValue="user">
+                    <TabsList className="grid w-full grid-cols-2">
+                      <TabsTrigger
+                        onClick={() => handleSetRole("user")}
+                        value="user"
+                      >
+                        User
+                      </TabsTrigger>
+                      <TabsTrigger
+                        onClick={() => handleSetRole("service")}
+                        value="service"
+                      >
+                        Service
+                      </TabsTrigger>
+                    </TabsList>
+
+                    {/* tab-1 user form */}
+                    <TabsContent value="user">
+                      <SignUpForm
+                        handleSignUp={handleSignUp}
+                        register={register}
+                        handleSubmit={handleSubmit}
+                        errors={errors}
+                        reset={reset}
+                      />
+                    </TabsContent>
+
+                    {/* tab-2 service form*/}
+                    <TabsContent value="service">
+                      <SignUpForm
+                        handleSignUp={handleSignUp}
+                        register={register}
+                        handleSubmit={handleSubmit}
+                        errors={errors}
+                        reset={reset}
+                      />
+                    </TabsContent>
+                  </Tabs>
+                </DialogContent>
+              </Dialog>
+
+
               {/* sign in dialog */}
               <Dialog>
                 <DialogTrigger asChild className="hidden lg:flex">
-                  <Button variant="secondary">Sign In</Button>
+                  <Button className="text-white" variant="secondary">Sign In</Button>
                 </DialogTrigger>
 
                 <DialogContent className="sm:max-w-[425px]">
