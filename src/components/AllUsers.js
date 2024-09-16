@@ -6,7 +6,8 @@ const AllUsers = ({users}) => {
   return (
     <div className="mx-auto px-4 w-[100%] ">
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        All Users
+        {/* is here change */}
+        All Users , is here
       </h1>
 
       {/* Responsive table container */}
