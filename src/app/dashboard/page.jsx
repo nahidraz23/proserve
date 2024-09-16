@@ -67,15 +67,6 @@ const Dashboard = () => {
     <div>
       {/* Main content */}
       <main className="md:p-6">
-        {/* Header */}
-        <header className="flex flex-col md:flex-row justify-between items-center mb-6">
-          <h2 className="text-2xl font-semibold mb-4 md:mb-0">Dashboard</h2>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full md:w-1/3"
-          />
-        </header>
 
         {/* Cards section */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">

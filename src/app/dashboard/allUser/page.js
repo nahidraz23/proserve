@@ -8,11 +8,10 @@ export async function allUsersData(){
 
 export default async function AllUser(){
     const users = await allUsersData()
-    // console.log("data",users);
 
     return(
         <div className="mb-40">
-        <AllUsers users={users}/>
+        <AllUsers users={users?.service}/>
 
         </div>
     )

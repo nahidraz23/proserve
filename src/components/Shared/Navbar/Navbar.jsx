@@ -13,8 +13,8 @@ const Navbar = () => {
           <Link
             href={link.path}
             key={link.path}
-            className={`capitalize font-medium hover:text-primary hover:border-b-2 hover:border-primary transition-all ${
-              link.path === pathname && "border-b-2 border-primary text-primary"
+            className={`capitalize font-medium text-lg hover:text-secondary hover:border-b-2 hover:border-secondary transition-all ${
+              link.path === pathname && "border-b-2 border-secondary text-secondary"
             }`}
           >
             {link.label}

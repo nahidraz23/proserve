@@ -88,8 +88,8 @@ const Header = () => {
   };
 
   return (
-    <header className="py-5 bg-black/80 fixed z-50 w-full flex">
-      <div className="flex justify-between container">
+    <header className="py-5 bg-gradient-to-r from-indigo-900 to-purple-900 fixed z-50 w-full flex">
+      <div className="flex justify-between items-center container">
         <Link href="/" className="font-bold text-2xl text-white">
           ProServe<span className="text-primary">.</span>
         </Link>
@@ -110,7 +110,7 @@ const Header = () => {
               {/* sign up dialog */}
               <Dialog>
                 <DialogTrigger asChild className="hidden lg:flex">
-                  <Button>Sign Up</Button>
+                  <Button className="text-white">Sign Up</Button>
                 </DialogTrigger>
                 <DialogContent className="">
                   <DialogHeader>
@@ -162,7 +162,7 @@ const Header = () => {
               {/* sign in dialog */}
               <Dialog>
                 <DialogTrigger asChild className="hidden lg:flex">
-                  <Button variant="secondary">Sign In</Button>
+                  <Button className="text-white" variant="secondary">Sign In</Button>
                 </DialogTrigger>
 
                 <DialogContent className="sm:max-w-[425px]">

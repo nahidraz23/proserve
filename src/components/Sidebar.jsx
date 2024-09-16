@@ -1,38 +1,36 @@
+"use client"
 import Link from "next/link";
-import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { GrServices } from "react-icons/gr";
 import { LiaUsersCogSolid } from "react-icons/lia";
 
 const Sidebar = () => {
   return (
-    <div>
-      <aside className="w-full md:w-1/6 p-5 flex md:flex-col flex-row gap-4 pt-10 space-y-3">
-        <Link
-          className="text-xl font-bold flex items-center gap-4"
-          href={"/dashboard"}
-        >
-          <CgProfile size={30} /> Dashboard
+    <div className="h-full bg-gradient-to-b from-purple-500 to-primary text-white">
+      <aside className="w-full p-5 flex flex-col gap-6 pt-10">
+        <Link href="/dashboard">
+          <div className="text-lg font-semibold flex items-center gap-4 transition-all duration-300 hover:bg-primary p-3 rounded-md hover:scale-105">
+            <CgProfile size={25} /> Dashboard
+          </div>
         </Link>
-        <Link
-          className="text-xl font-bold flex items-center gap-4"
-          href={"/dashboard/profile"}
-        >
-          <CgProfile size={30} /> Profile
+
+        <Link href="/dashboard/profile">
+          <div className="text-lg font-semibold flex items-center gap-4 transition-all duration-300 hover:bg-primary p-3 rounded-md hover:scale-105">
+            <CgProfile size={25} /> Profile
+          </div>
         </Link>
-        <Link
-          className="text-xl font-bold flex items-center gap-4"
-          href={"/dashboard/services"}
-        >
-          <GrServices size={30} /> Services
+
+        <Link href="/dashboard/services">
+          <div className="text-lg font-semibold flex items-center gap-4 transition-all duration-300 hover:bg-primary p-3 rounded-md hover:scale-105">
+            <GrServices size={25} /> Services
+          </div>
         </Link>
-        <Link
-          className="text-xl font-bold flex items-center gap-4"
-          href={"/dashboard/allUser"}
-        >
-          <LiaUsersCogSolid size={30} /> All User
+
+        <Link href="/dashboard/allUser">
+          <div className="text-lg font-semibold flex items-center gap-4 transition-all duration-300 hover:bg-primary p-3 rounded-md hover:scale-105">
+            <LiaUsersCogSolid size={25} /> All User
+          </div>
         </Link>
-        {/* Sidebar items */}
       </aside>
     </div>
   );
