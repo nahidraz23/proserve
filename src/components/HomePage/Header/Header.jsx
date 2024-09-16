@@ -7,25 +7,23 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import useAuth from "@/components/hooks/useAuth";
+import useAuth from "@/hooks/useAuth";
 import MobileNav from "@/components/Shared/Navbar/MobileNav";
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import SignUpForm from "@/components/Authentication/SignUp/SignUpForm";
 import SignInForm from "@/components/Authentication/SignIn/SignInForm";
+import SignUpForm from "@/components/Authentication/SignUp/SignUpForm";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
 
 const Header = () => {
-  const [userRole, setUserRole] = useState("user");
   const { toast } = useToast();
-
+  const axiosPublic = useAxiosPublic();
   const { user, createUser, signInUser, updateUserProfile, logOut } = useAuth();
 
   const {
@@ -33,21 +31,21 @@ const Header = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    control
   } = useForm();
-
-  const handleSetRole = (e) => {
-    reset();
-    setUserRole(e);
-  };
 
   const handleSignUp = async (data) => {
     try {
       const res = await createUser(data.email, data.password);
-      toast({
-        title: "Sign up successful!",
-        action: <ToastAction altText="OK">OK</ToastAction>,
-      });
-      console.log(res);
+      const result = await axiosPublic.post('/api/users', data)
+      if (result.data.insertedId) {
+        toast({
+          title: "Sign up successful!",
+          action: <ToastAction altText="OK">OK</ToastAction>,
+        });
+      }
+
+      // console.log(result);
       await updateUserProfile(user?.displayName, user?.photoURL);
     } catch (error) {
       toast({
@@ -107,6 +105,7 @@ const Header = () => {
             </>
           ) : (
             <>
+
               {/* sign up dialog */}
               <Dialog>
                 <DialogTrigger asChild className="hidden lg:flex">
@@ -159,6 +158,7 @@ const Header = () => {
                 </DialogContent>
               </Dialog>
 
+
               {/* sign in dialog */}
               <Dialog>
                 <DialogTrigger asChild className="hidden lg:flex">
@@ -181,13 +181,36 @@ const Header = () => {
                   </div>
                 </DialogContent>
               </Dialog>
+
+              {/* sign up dialog */}
+              <Dialog>
+                <DialogTrigger asChild className="hidden lg:flex">
+                  <Button>Sign Up</Button>
+                </DialogTrigger>
+                <DialogContent className="">
+                  <DialogHeader>
+                    <DialogTitle>Sign up your account</DialogTitle>
+                  </DialogHeader>
+
+                  <SignUpForm
+                    handleSignUp={handleSignUp}
+                    handleSubmit={handleSubmit}
+                    register={register}
+                    errors={errors}
+                    reset={reset}
+                    control={control}
+                  />
+                </DialogContent>
+              </Dialog>
             </>
           )}
         </div>
+
         {/* mobile devices navbar */}
         <div className="flex lg:hidden">
           <MobileNav
             handleSignIn={handleSignIn}
+            handleSignUp={handleSignUp}
             handleSubmit={handleSubmit}
             register={register}
             errors={errors}

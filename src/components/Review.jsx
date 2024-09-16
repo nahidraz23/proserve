@@ -1,4 +1,5 @@
 "use client"
+
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -12,11 +13,13 @@ import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
+
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
     const fetchReviews = async () => {
       try {
         const res = await fetch("https://proserve-three.vercel.app/api/review");
@@ -29,6 +32,7 @@ const Review = () => {
     };
 
     fetchReviews();
+
   }, []);
 
   return (
@@ -50,6 +54,29 @@ const Review = () => {
       >
         <CarouselContent>
           {reviews.map((review, index) => (
+
+  }, [])
+
+return (
+  <div className="container mx-auto my-28 w-full">
+    <div className="text-center mb-8">
+      <h3 className="text-secondary text-[18px] tracking-[0.17em] font-normal ">
+        TESTIMONIALS
+      </h3>
+      <p className="lg:text-[47px] text-[37px] pt-3 font-medium">
+        Our Client Reviews
+      </p>
+    </div>
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      className="w-full"
+    >
+      <CarouselContent>
+        {
+          reviews.map((review, index) => (
+
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 z-0">
               <div className="p-7 group">
                 <Card className="relative rounded-xl overflow-hidden h-[500px] shadow-lg border-none group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:transform transition-transform duration-300 ease-in-out">
@@ -85,14 +112,14 @@ const Review = () => {
                   </CardContent>
                 </Card>
               </div>
-            </CarouselItem>
+            </CarouselItem >
           ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </div>
-  );
-};
+      </CarouselContent >
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel >
+  </div >
+)};
 
 export default Review;
+

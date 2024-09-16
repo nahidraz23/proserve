@@ -1,6 +1,6 @@
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
 import { Button } from "../ui/button";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
 

@@ -12,7 +12,6 @@ export default function Home () {
     <div className=''>
       <Banner></Banner>
       <WhyChooseUs></WhyChooseUs>
-
       <Recommendedservice></Recommendedservice>
       <Experiences />
       <HowItWork />

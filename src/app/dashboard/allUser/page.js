@@ -11,7 +11,11 @@ export default async function AllUser(){
 
     return(
         <div className="mb-40">
+
         <AllUsers users={users?.service}/>
+
+
+        <AllUsers users={users}/>
 
         </div>
     )

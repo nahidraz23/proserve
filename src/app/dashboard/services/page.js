@@ -1,3 +1,4 @@
+
 "use client"
 import { FaPlus, FaSearch, FaTrash } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -107,3 +108,5 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
+
+
