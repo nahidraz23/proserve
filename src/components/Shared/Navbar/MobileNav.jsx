@@ -25,8 +25,15 @@ import { usePathname } from "next/navigation";
 
 import { FiAlignRight } from "react-icons/fi";
 import SignInForm from "@/components/Authentication/SignIn/SignInForm";
+import SignUpForm from "@/components/Authentication/SignUp/SignUpForm";
 
-const MobileNav = ({ handleSignIn, handleSubmit, register, errors }) => {
+const MobileNav = ({
+  handleSignIn,
+  handleSignUp,
+  handleSubmit,
+  register,
+  errors,
+}) => {
   const pathname = usePathname();
 
   return (
@@ -95,15 +102,12 @@ const MobileNav = ({ handleSignIn, handleSubmit, register, errors }) => {
               <DialogHeader>
                 <DialogTitle>Sign up your account</DialogTitle>
               </DialogHeader>
-              {/* form here */}
-              <div>
-                <SignInForm
-                  handleSignIn={handleSignIn}
-                  handleSubmit={handleSubmit}
-                  register={register}
-                  errors={errors}
-                />
-              </div>
+              <SignUpForm
+                handleSignUp={handleSignUp}
+                handleSubmit={handleSubmit}
+                register={register}
+                errors={errors}
+              />
             </DialogContent>
           </Dialog>
         </SheetFooter>

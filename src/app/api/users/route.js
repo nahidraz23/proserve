@@ -1,12 +1,14 @@
 import { connectDB } from "@/lib/connectDB";
 import { NextResponse } from "next/server";
 
-export const GET = async (request) => {
+export const POST = async (request) => {
+
+  const user = await request.json();
   try {
     const db = await connectDB();
-    const reviewsCollection = db.collection("review");
-    const reviews = await reviewsCollection.find().toArray();
-    return NextResponse.json(reviews);
+    const usersCollection = db.collection("users");
+    const result = await usersCollection.insertOne(user);
+    return NextResponse.json(result);
   } catch (error) {
     console.log(error);
     return NextResponse.json({ message: "No Data Found", error });

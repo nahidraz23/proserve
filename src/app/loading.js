@@ -6,8 +6,6 @@ export default function Loading() {
             <div className="bg-white py-20 dark:bg-dark">
             <div className="container">
                 <div className="flex flex-wrap items-center gap-4">
-
-
                     <div>
                         <svg
                             className="animate-spin"
