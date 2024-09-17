@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axipsPublic = axios.create({
-    baseURL: 'https://proserve-three.vercel.app'
+    baseURL: 'http://localhost:3000'
 })
 
 const useAxiosPublic = () => {
