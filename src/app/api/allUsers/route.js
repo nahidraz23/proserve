@@ -6,7 +6,6 @@ export const GET = async () => {
     const db = await connectDB()
     const usersCollection = db.collection('users')
     const users = await usersCollection.find().toArray();
-    console.log(users)
     return NextResponse.json(users)
   } catch (error) {
     console.log(error)

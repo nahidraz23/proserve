@@ -3,11 +3,11 @@ import useAxiosPublic from '@/hooks/useAxiosPublic';
 
 const axiosPublic = useAxiosPublic();
 
-export const allUsersData = ( async () => {
-  const res = await axiosPublic.get('http://localhost:3000/dashboard/allUser/api');
+export const allUsersData =  async () => {
+  const res = await axiosPublic.get('/api/allUsers');
   const result = await res.data;
   return result;
-})
+}
 
 const AllUser = async () => {
   const users = await allUsersData()
