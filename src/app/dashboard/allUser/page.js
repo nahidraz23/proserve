@@ -1,8 +1,11 @@
 import AllUsers from '@/components/AllUsers'
+import useAxiosPublic from '@/hooks/useAxiosPublic'
+
+const axiosPublic = useAxiosPublic();
 
 export  const  allUsersData = async () => {
-  const res = await fetch('http://localhost:3000/dashboard/allUser/api')
-  const result = await res.json()
+  const res = await axiosPublic.get('/dashboard/allUser/api')
+  const result = await res.data;
   return result
 }
 
