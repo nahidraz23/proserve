@@ -1,6 +1,9 @@
 import AllUsers from '@/components/AllUsers'
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 export const allUsersData =  async (axiosPublic) => {
   const res = await axiosPublic.get('/api/allUsers');
   const result = await res.data;
@@ -9,6 +12,7 @@ export const allUsersData =  async (axiosPublic) => {
 
 const AllUser = async () => {
   const axiosPublic = useAxiosPublic();
+  
   const users = await allUsersData(axiosPublic);
 
   return (

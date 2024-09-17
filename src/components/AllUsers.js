@@ -1,7 +1,7 @@
 import { FaTrash } from "react-icons/fa6";
 
 const AllUsers = ({users}) => {
-  console.log("adgfuyfwyf",users);
+  // console.log("adgfuyfwyf",users);
 
   return (
     <div className="mx-auto px-4 w-[100%] ">
