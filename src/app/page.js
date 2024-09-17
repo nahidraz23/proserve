@@ -1,4 +1,5 @@
-'use client'
+export const dynamic = 'force-dynamic';
+
 import Experiences from '@/components/HomePage/experiences/Experiences'
 import Banner from '@/components/HomePage/Header/Banner'
 import HomeStats from '@/components/HomePage/HomeStats'

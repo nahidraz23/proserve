@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const axipsPublic = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+const axiosPublic = axios.create({
+    baseURL: process.env.NEXT_PUBLIC_BASE_URL
 })
 
 const useAxiosPublic = () => {
-    return axipsPublic;
+    return axiosPublic;
 };
 
 export default useAxiosPublic;
