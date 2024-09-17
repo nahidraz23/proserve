@@ -1,16 +1,15 @@
 import AllUsers from '@/components/AllUsers'
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 
-const axiosPublic = useAxiosPublic();
-
-export const allUsersData =  async () => {
+export const allUsersData =  async (axiosPublic) => {
   const res = await axiosPublic.get('/api/allUsers');
   const result = await res.data;
   return result;
 }
 
 const AllUser = async () => {
-  const users = await allUsersData()
+  const axiosPublic = useAxiosPublic();
+  const users = await allUsersData(axiosPublic);
 
   return (
     <div className='mb-40'>
