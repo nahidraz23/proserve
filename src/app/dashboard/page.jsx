@@ -1,5 +1,3 @@
-
-"use client"
 import { GrServices } from "react-icons/gr";
 import { LiaUsersCogSolid } from "react-icons/lia";
 import { CgProfile } from "react-icons/cg";
