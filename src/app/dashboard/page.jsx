@@ -1,9 +1,7 @@
-
-"use client"
+"use client";
 import { GrServices } from "react-icons/gr";
 import { LiaUsersCogSolid } from "react-icons/lia";
 import { CgProfile } from "react-icons/cg";
-
 
 import {
   Chart as ChartJS,
@@ -67,12 +65,9 @@ const Dashboard = () => {
   };
 
   return (
-
     <div>
-
       {/* Main content */}
       <main className="md:p-6">
-
         {/* <div className="flex flex-col md:flex-row  bg-gray-100 pt-20">
        
           <aside className="w-full md:w-1/6 bg-white p-5 flex md:flex-col flex-row gap-4">
@@ -86,8 +81,6 @@ const Dashboard = () => {
               Service
             </Link>
           </aside> */}
-
-
 
         {/* Main content */}
         {/* <main className="md:p-6"> */}
