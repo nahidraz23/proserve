@@ -30,7 +30,7 @@ const ServicesPage = () => {
   }
 
   return (
-    <div className="p-6 w-[100%] mx-auto  min-h-screen">
+    <div className="p-6 w-[100%] mx-auto">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Manage Services</h1>
