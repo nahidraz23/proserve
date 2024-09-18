@@ -6,7 +6,7 @@ import { LiaUsersCogSolid } from "react-icons/lia";
 
 const Sidebar = () => {
   return (
-    <div className="h-full bg-gradient-to-b from-purple-500 to-primary text-white">
+    <div className="min-h-[calc(100vh-38px)] bg-gradient-to-b from-purple-500 to-primary text-white rounded-lg">
       <aside className="w-full p-5 flex flex-col gap-6 pt-10">
         <Link href="/dashboard">
           <div className="text-lg font-semibold flex items-center gap-4 transition-all duration-300 hover:bg-primary p-3 rounded-md hover:scale-105">

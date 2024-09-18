@@ -1,3 +1,6 @@
+'use client'
+import DashboardLayout from "@/app/dashboard/layout";
+import { usePathname } from "next/navigation";
 import {
   FaFacebookF,
   FaInstagram,
@@ -6,6 +9,12 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const path = usePathname();
+
+  if(path.includes('dashboard')){
+    return DashboardLayout;
+  }
+
   return (
     <footer className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-12">
       <div className="container mx-auto grid md:grid-cols-4 gap-10 text-center md:text-left w-[80%]">

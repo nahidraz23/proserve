@@ -20,11 +20,14 @@ import { ToastAction } from "@/components/ui/toast";
 import SignInForm from "@/components/Authentication/SignIn/SignInForm";
 import SignUpForm from "@/components/Authentication/SignUp/SignUpForm";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
+import { usePathname } from "next/navigation";
+import DashboardLayout from "@/app/dashboard/layout";
 
 const Header = () => {
   const { toast } = useToast();
   const axiosPublic = useAxiosPublic();
   const { user, createUser, signInUser, updateUserProfile, logOut } = useAuth();
+  const path = usePathname();
 
   const {
     register,
@@ -93,6 +96,10 @@ const Header = () => {
         console.log(err.message);
       });
   };
+
+  if(path.includes('dashboard')){
+    return DashboardLayout;
+  }
 
   return (
     <header className="py-5 bg-gradient-to-r from-indigo-900 to-purple-900 fixed z-50 w-full flex">

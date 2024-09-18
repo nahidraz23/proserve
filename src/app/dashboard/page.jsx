@@ -59,7 +59,7 @@ const Dashboard = () => {
 
   return (
 
-    <div className="min-h-screen">
+    <div className="">
       <h1 className="text-center">Dashboard</h1>
       {/* <main className="md:p-6">
         <header className="flex flex-col md:flex-row justify-between items-center mb-6">

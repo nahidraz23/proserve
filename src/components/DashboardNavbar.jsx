@@ -7,7 +7,7 @@ const DashboardNavbar = () => {
   const [notificationCount, setNotificationCount] = useState(1);
 
   return (
-    <div className="flex items-center justify-between ">
+    <div className="flex items-center justify-between">
       {/* Search bar */}
       <div className="hidden md:flex items-center gap-2 text-xs rounded-full px-2 ring-[1.5px] ring-gray-300">
         <FaSearch size={14} />
